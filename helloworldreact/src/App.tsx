@@ -13,15 +13,22 @@ function App() {
     endereco: 'Av. 21 de Abril 504'
   }
 
+  const condicao: boolean = true
+
   return (
     <div className="App">
       <h1>{empresa}</h1>
-      <p>{10}</p>
-      <p>{rsCliente.nome}</p>
-      <p>{10 + 10}</p>
-      <a href={site}>Site Fleek</a>
-      <CadastroCliente />
-      <CadastroCliente />
+
+      {condicao &&
+        <>
+          <p>{10}</p>
+          <p>{rsCliente.nome}</p>
+          <p>{10 + 10}</p>
+          <a href={site}>Site Fleek</a>
+          <CadastroCliente />
+          <CadastroCliente />
+        </>
+      }
       <CadastroCliente />
     </div>
   );
