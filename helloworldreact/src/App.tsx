@@ -6,30 +6,24 @@ import CadastroCliente from './componentes/CadastroCliente'
 function App() {
 
   const empresa: string = "Fleek Cursos"
-  const site: string = "https://www.fleekcursos.com.br"
 
-  const rsCliente = {
-    nome: 'Zanatta',
-    endereco: 'Av. 21 de Abril 504'
-  }
-
-  const condicao: boolean = true
+  const UF: Array<string> = ['SP', 'MG', 'SC']
 
   return (
     <div className="App">
       <h1>{empresa}</h1>
 
-      {condicao &&
-        <>
-          <p>{10}</p>
-          <p>{rsCliente.nome}</p>
-          <p>{10 + 10}</p>
-          <a href={site}>Site Fleek</a>
-          <CadastroCliente />
-          <CadastroCliente />
-        </>
-      }
-      <CadastroCliente />
+      {/* 
+
+      {UF.map((uf, index) => <p key={index}>{uf}</p>)}
+      
+*/}
+      {UF.map((uf, index) => {
+
+        return <p key={index}>{uf}</p>
+
+      })}
+
     </div>
   );
 }
