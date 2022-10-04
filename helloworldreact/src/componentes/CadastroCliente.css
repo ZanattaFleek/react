@@ -1,3 +1,11 @@
 .componenteCadastro {
     margin-top: 50px;
+    
+}
+
+.componenteCadastro input,label, select {
+    text-align: left;
+    margin-top: 5px;
+    display: block;
+    margin-left: 33%;
 }
