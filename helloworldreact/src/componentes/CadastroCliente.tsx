@@ -1,19 +1,39 @@
-import React, { ChangeEvent } from 'react'
+import React, { ChangeEvent, useState } from 'react'
 
 import './CadastroCliente.css'
 
+interface rsClienteInterface {
+    nome: string
+    empresa: string
+}
+
 export default function CadastroCliente() {
 
-    let nomeCliente: string = ""
+    const [rsCliente, setRsCliente] = useState<rsClienteInterface>({
+        nome: 'Zanatta',
+        empresa: 'Fleek Cursos'
+    })
 
     const txtNomeOnChange = (event: ChangeEvent<HTMLInputElement>) => {
 
-        nomeCliente = event.target.value
+        setRsCliente({
+            ...rsCliente,
+            nome: event.target.value
+        })
+
+    }
+
+    const txtEmpresaOnChange = (event: ChangeEvent<HTMLInputElement>) => {
+
+        setRsCliente({
+            ...rsCliente,
+            empresa: event.target.value
+        })
 
     }
 
     const txtNomeClick = () => {
-        alert('Oi '.concat(nomeCliente))
+        alert('Oi '.concat(rsCliente.nome))
     }
 
     return (
@@ -22,8 +42,16 @@ export default function CadastroCliente() {
 
             <label>Nome</label>
             <input type="text" id="txtNome" onChange={txtNomeOnChange} />
+            <label>Empresa</label>
+            <input type="text" id="txtEmpresa" onChange={txtEmpresaOnChange} />
+            <br />
             <input type="button" value="Exibir Nome" onClick={txtNomeClick} />
-
+            <p>
+                rsCliente.nome: {rsCliente.nome}
+            </p>
+            <p>
+                rsCliente.empresa: {rsCliente.empresa}
+            </p>
         </div>
     )
 }
