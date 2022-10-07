@@ -1,28 +1,30 @@
 import React from 'react'
-import { createBrowserRouter } from "react-router-dom";
 
-import Login from './Login/Login'
-import Layout from './Layout/Layout'
-import CadastroCliente from './Cadastros/CadastroCliente'
-import CadastroFornecedor from './Cadastros/CadastroFornecedor'
+import { createBrowserRouter } from 'react-router-dom';
+
+import CadastroCliente from './Cadastros/CadastroCliente';
+import CadastroFornecedor from './Cadastros/CadastroFornecedor';
+
+import LayOut from './Layout/Layout';
+import Login from './Login/Login';
 
 export const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Layout />,
-    children: [
-      {
-        path: "cadastroCliente",
-        element: <CadastroCliente />,
-      },
-      {
-        path: "cadastroFornecedor",
-        element: <CadastroFornecedor />,
-      }
-    ],
-  },
-  {
-    path: "/Login",
-    element: <Login />
-  }
+    {
+        path: "/",
+        element: <LayOut />,
+        children: [
+            {
+                path: "cadastrocliente",
+                element: <CadastroCliente />
+            },
+            {
+                path: "cadastrofornecedor",
+                element: <CadastroFornecedor />
+            }
+        ],
+    },
+    {
+        path: "/login",
+        element: <Login />,
+    }
 ]);
