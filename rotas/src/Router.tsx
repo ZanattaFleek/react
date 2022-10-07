@@ -4,6 +4,7 @@ import { createBrowserRouter } from 'react-router-dom';
 
 import CadastroCliente from './Cadastros/CadastroCliente';
 import CadastroFornecedor from './Cadastros/CadastroFornecedor';
+import Erro from './Layout/Erro';
 
 import LayOut from './Layout/Layout';
 import Login from './Login/Login';
@@ -14,7 +15,7 @@ export const router = createBrowserRouter([
         element: <LayOut />,
         children: [
             {
-                path: "cadastrocliente",
+                path: "cadastrocliente/:idCliente",
                 element: <CadastroCliente />
             },
             {
@@ -26,5 +27,9 @@ export const router = createBrowserRouter([
     {
         path: "/login",
         element: <Login />,
+    },
+    {
+        path: "*",
+        element: <Erro />,
     }
 ]);
