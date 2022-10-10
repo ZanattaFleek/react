@@ -1,9 +1,14 @@
 import React from 'react'
+import { LoginContexto } from './Layout'
 
 export default function Footer() {
     return (
         <>
-            <h1>Footer</h1>
+            <LoginContexto.Consumer>
+                {(value) => <>
+                    <span className="footer">{value.nome}</span>
+                </>}
+            </LoginContexto.Consumer>
         </>
     )
 }

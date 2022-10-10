@@ -7,12 +7,18 @@ import Header from './Header'
 
 import './Layout.css'
 
+const loginContextoPadrao = { logado: false, nome: 'Zanatta' }
+
+export const LoginContexto = React.createContext({ ...loginContextoPadrao })
+
 export default function LayOut() {
     return (
         <>
-            <Header />
-            <Outlet />
-            <Footer />
+            <LoginContexto.Provider value={loginContextoPadrao}>
+                <Header />
+                <Outlet />
+                <Footer />
+            </LoginContexto.Provider>
         </>
     )
 }
