@@ -10,9 +10,12 @@ export default function CadastroCliente() {
     return (
         <LoginContexto.Consumer>
             {
-                ({ nome }) => <>
+                ({ nome, updateLogin, logado }) => <>
                     <h1>Cadastro de Cliente {idCliente} </h1>
-                    <h3>Bem Vindo: {nome}</h3>
+                    {logado && <h3>Bem Vindo: {nome}</h3>}
+
+                    <input type="button" value="Alterar Usuario" onClick={() => updateLogin(true, 'Zanatta')} />
+
                 </>
             }
         </LoginContexto.Consumer>
